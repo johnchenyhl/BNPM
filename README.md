@@ -1,0 +1,4 @@
+BNPM
+====
+
+Bayesian nonparametric mixture
