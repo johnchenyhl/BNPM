@@ -19,6 +19,7 @@ f = @(b) num * (gammaln(NUM_M * b) - NUM_M * gammaln(b)) + sum(sum(gammaln(K + b
 
 h = @(x) f(exp(x)) + x - exp(x);
 
+% limit beta from 0 to 1
 t = slicesample(log(beta), 10, 'logpdf', h, 'thin', 1, 'burnin', 0);
 while isempty(find(t < 0))
     t = slicesample(log(beta), 10, 'logpdf', h, 'thin', 1, 'burnin', 0);
